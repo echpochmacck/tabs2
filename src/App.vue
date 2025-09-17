@@ -1,5 +1,9 @@
 <script setup lang="ts">
-  import {RouterLink, RouterView} from 'vue-router'
+import { onMounted } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+import { tr } from "vuetify/locale";
+
+
 </script>
 
 <template>

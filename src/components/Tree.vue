@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import {ref} from 'vue'
+    import {onMounted, ref} from 'vue'
     import type {TreeItem} from '@/stores/treeStore.ts'
     import {useTreeStore, setSelectedObject} from '@/stores/treeStore.ts'
     const treeStore = useTreeStore();
@@ -79,6 +79,8 @@
     function hadnleClick(obj: TreeItem) {
         treeStore.setSelectedObject({...obj});
     }
+
+//  
 </script>
 
 <template>
