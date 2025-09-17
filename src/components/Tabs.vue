@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import {ref, watchEffect} from "vue";
     import {type TreeItem, useTreeStore} from "@/stores/TreeStore.ts";
+    import TabsContent from '@/components/TabsContent.vue'
     const treeStore = useTreeStore();
     const arrOfObjects = ref < TreeItem[] > ([])
     const tab = ref < number > (0)
@@ -42,8 +43,15 @@
 
         <v-card-text>
             <v-tabs-window v-model="tab">
-                <v-tabs-window-item v-for="(tabs, index) in arrOfObjects" :value="index">
-                    <!-- {{ tabs }} -->
+                <v-tabs-window-item v-for="(item, index) in arrOfObjects" :value="index">
+                    <tabs-content :tab="item"></tabs-content>
+                </v-tabs-window-item>
+            </v-tabs-window>
+        </v-card-text>
+    </v-card>
+
+</template>
+<!-- <v-tabs-window-item v-for="(tabs, index) in arrOfObjects" :value="index">
                     <v-form>
                         <v-container>
                             <v-row>
@@ -58,9 +66,4 @@
                             </v-row>
                         </v-container>
                     </v-form>
-                </v-tabs-window-item>
-            </v-tabs-window>
-        </v-card-text>
-    </v-card>
-
-</template>
+                </v-tabs-window-item> -->

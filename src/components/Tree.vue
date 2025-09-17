@@ -77,7 +77,7 @@
     ])
 
     function hadnleClick(obj: TreeItem) {
-        treeStore.setSelectedObject(obj);
+        treeStore.setSelectedObject({...obj});
     }
 </script>
 
